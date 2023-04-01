@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>(3) Home/Twitter</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif, Arial, Helvetica, sans-serif;
+        height: 3000px;
+      }
+      .layout {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .main {
+        position: fixed;
+        top: 12px;
+        left: 196px;
+        font-weight: 650;
+        font-size: 20px;
+      }
+
+      .cover {
+        position: fixed;
+        top: 0;
+        left: 180px;
+        width: 602px;
+        height: 106px;
+        border: 1px solid rgb(241, 241, 241);
+        z-index: 200;
+      }
+
+      .logo {
+        height: 26px;
+        margin-bottom: 5px;
+        padding: 10px;
+        border-radius: 16px;
+        cursor: pointer;
+      }
+
+      .leftsidebar {
+        position: fixed;
+        left: 106px;
+        top: 5px;
+      }
+
+      .twit {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .navside {
+        position: fixed;
+        top: 108px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .navsid {
+        position: fixed;
+        top: 159px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .ficat {
+        position: fixed;
+        top: 209px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .messg {
+        position: fixed;
+        top: 262px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .blue {
+        position: fixed;
+        top: 312px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .file {
+        position: fixed;
+        top: 364px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .ore {
+        position: fixed;
+        top: 414px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+
+      .weet {
+        position: fixed;
+        top: 474px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .counts {
+        position: fixed;
+        top: 498px;
+        font-size: 11px;
+        background-color: rgb(105, 105, 105);
+        padding: 3px 4px;
+        border-radius: 3px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .twit:hover .navside,
+      .twit:hover .navsid,
+      .twit:hover .ficat,
+      .twit:hover .messg,
+      .twit:hover .file,
+      .twit:hover .ore,
+      .twit:hover .weet,
+      .twit:hover .counts,
+      .twit:hover .blue {
+        opacity: 1;
+        transition: 0,14s;
+      }
+
+      .rightsidebar {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo:hover {
+        background-color: rgb(232, 232, 232);
+      }
+
+      .logos{
+        height: 24px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 16px;
+        cursor: pointer;
+      }
+
+      .logos:hover {
+        background-color: rgb(227, 243, 255);
+      }
+
+      .srh {
+        position: fixed;
+        right: 92px;
+        top: 7px;
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(237, 242, 243);
+        padding-top: 13px;
+        padding-bottom: 13px;
+        padding-left: 20px;
+        padding-right: 70px;
+        border-radius: 35px;
+        margin-bottom: 24px;
+        z-index: 2;
+      }
+
+      .ss {
+        height: 17px;
+        margin-right: 10px;
+      }
+
+      .search-button {
+        border: none;
+        background: none;
+        padding-right: 60px;
+        padding-left: 6px;
+      }
+
+      .search-button::placeholder {
+        font-size: 15px;
+        color: rgb(95, 116, 136);
+      }
+
+      .rect {
+        position: absolute;
+        right: 83px;
+        top: 60px;
+        background-color: rgb(240, 244, 245);
+        height: 716px;
+        width: 326px;
+        padding-left: 16px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .rectl {
+        position: absolute;
+        right: 83px;
+        margin-top: 70px;
+        top: 730px;
+        background-color: rgb(240, 244, 245);
+        height: 348px;
+        width: 326px;
+        padding-left: 16px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      .trends {
+        font-size: 21px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-left: 6px;
+        color: rgb(31, 31, 31);
+        margin-bottom: 18px;
+      }
+
+      .trending {
+        font-size: 14px;
+        color: rgb(78, 103, 123);
+      }
+
+      .gist {
+        font-weight: 600;
+      }
+
+      .k {
+        color: rgb(78, 103, 123);
+        font-size: 14px;
+      }
+
+      .tain {
+        margin-left: 8px;
+        margin-bottom: 18px;
+      }
+
+      .tain:hover {
+        background-color: rgb(235, 238, 240);
+        transition: 0.15s;
+      }
+
+      .tren {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .option {
+        height: 18px;
+        margin-right: 20px;
+        border-radius: 2px;
+      }
+
+      .option:hover {
+        background-color: rgb(206, 234, 255);
+      }
+
+      .show {
+        color: rgb(29, 155, 240);
+        margin-left: 6px;
+        font-weight: 400;
+      }
+
+      .under {
+        position: fixed;
+        right: 74px;
+        top: 0;
+        z-index: 300;
+        width: 378px;
+        height: 55px;
+        background-color: white;
+      }
+
+      .ff {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        top: 53px;
+      }
+
+      .for {
+        font-weight: bold;
+        padding: 17px 117px;
+        font-size: 15px;
+      }
+
+      .for:hover {
+        background-color: rgb(232, 232, 232);
+      }
+
+      .following {
+        margin-left: 10px;
+        padding: 17px 117px;
+        color: rgb(83, 100, 113);
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .following:hover {
+        background-color: rgb(232, 232, 232);
+      }
+
+      .recta {
+        position: fixed;
+        top: 103px;
+        left: 216px;
+        margin-left: 80px;
+        background-color: rgb(29, 155, 240);
+        width: 56px;
+        height: 4px;
+        border-radius: 35px;
+      }
+
+      .JOEJO {
+        margin-left: 18px;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+        margin-top: 6px;
+      }
+
+      .rectan {
+        position: absolute;
+        left: 171px;
+        top: 99px;
+        width: 602px;
+        height: 116px;
+        border: 1px solid rgb(241, 241, 241);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .covering {
+        position: relative;
+      }
+
+      .cove {
+        position: fixed;
+        top: 0;
+        left: 180px;
+        width: 602px;
+        height: 106px;
+        background-color: white;
+        z-index: 300;
+      }
+
+      .input-pic {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .input {
+        margin-left: 12px;
+        margin-top: 8px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        width: 510px;
+        height: 50px;
+        border: none;
+      }
+
+      .input::placeholder {
+        font-size: 20px;
+        color: rgb(105, 121, 136);
+      }
+
+      .pics {
+        height: 15px;
+        margin-left: 75px;
+        margin-top: 8px;
+        margin-right: 6px;
+        padding: 6px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .pics:hover {
+        background-color: rgb(227, 243, 255);
+      }
+
+      .picss {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .pic {
+        height: 20px;
+        margin-top: 8px;
+        margin-right: 6px;
+        padding: 6px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .pic:hover {
+        background-color: rgb(227, 243, 255);
+      }
+
+      .location {
+        height: 19px;
+        margin-top: 8px;
+        opacity: 0.65;
+        margin-right: 4px;
+      }
+
+      .tweet {
+        background-color: rgb(29, 155, 240);
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 224px;
+        margin-top: 8px;
+        padding: 8px 16px;
+        border-radius: 32px;
+        border: 0 solid black;
+        opacity: 0.5;
+      }
+
+      .med {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .media {
+        position: absolute;
+        bottom: -23px;
+        left: 74px;
+        font-size: 11px;
+        background-color: rgb(62, 62, 62);
+        color: white;
+        padding: 2px 4px;
+        border-radius: 2px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s;
+        z-index: 1;
+      }
+
+      .med:hover .media {
+        opacity: 1;
+      }
+
+      .medi {
+        position: absolute;
+        bottom: -23px;
+        font-size: 11px;
+        left: 1px;
+        background-color: rgb(62, 62, 62);
+        color: white;
+        padding: 2px 4px;
+        border-radius: 2px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s;
+        white-space: nowrap;
+        z-index: 1;
+      }
+
+      .med:hover .medi{
+        opacity: 1;
+      }
+
+      .rectang {
+        position: absolute;
+        left: 171px;
+        top: 216px;
+        width: 602px;
+        height: 50px;
+        border: 1px solid rgb(241, 241, 241);
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        color: rgb(29, 155, 240);
+        cursor: pointer;
+      }
+
+      .rectang:hover {
+        background-color: rgb(245, 245, 245);
+      }
+
+      .rectangl {
+        position: absolute;
+        left: 171px;
+        top: 266px;
+        width: 602px;
+        height: 128px;
+        border: 1px solid rgb(241, 241, 241);
+        display: flex;
+        flex-direction: row;
+      }
+
+      .rectangl:hover {
+        background-color: rgb(245, 245, 245);
+      }
+
+      .dev {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        object-fit: cover;
+        margin-left: 18px;
+        margin-top: 13px;
+      }
+
+      .twts {
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+      }
+
+      .in {
+        width: 14px;
+        height: 12px;
+        border-radius: 2px;
+      }
+
+      .texts {
+        font-weight: 700;
+        font-size: 15px;
+        margin-top: 12px;
+        margin-left: 12px;
+      }
+
+      .texts:hover {
+        text-decoration: underline;
+      }
+
+      .Dev {
+        color: rgb(83, 100, 113);
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+
+      .optn {
+        height: 20px;
+        margin-left: 40px;
+        margin-top: 12px;
+      }
+
+      .tts {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .techies {
+        font-size: 15px;
+        margin-left: 12px;
+      }
+
+      .confetti {
+        height: 20px;
+        margin-left: 12px;
+        margin-top: 2px;
+      }
+
+      .wet {
+        display: flex;
+        flex-direction: row;
+        margin-left: 11px;
+        margin-top: 8px;
+      }
+
+      .rep {
+        height: 16px;
+        vertical-align: text-bottom;
+      }
+
+     .reply {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-right: 48px;
+      }
+
+      .number {
+       font-size: 14px;
+       margin-left: 12px;
+       color: rgb(83, 100, 113);
+      }
+
+      .tweetbutton {
+        background-color: rgb(29, 155, 240);
+        border: none;
+        padding: 14px 16px;
+        border-radius: 32px;
+        align-items: center;
+        margin-top: 2px;
+        cursor: pointer;
+        z-index: -1;
+      }
+
+      .tweetbutton:hover {
+        background-color: rgb(30, 140, 220);
+      }
+
+      .plus {
+        margin-top: 2px;
+      }
+
+      .jo {
+        width: 62px;
+        height: 62px;
+        border-radius: 31px;
+        box-sizing: border-box;
+        margin-top: 48px;
+        padding: 9px;
+        cursor: pointer;
+      }
+
+      .jo:hover {
+        background-color: rgb(232, 232, 232);
+      }
+
+      .dot {
+      position: fixed;
+      left: 142px;
+      top: 65px;
+      background-color: rgb(29, 155, 240);
+      width: 7px;
+      height: 7px;
+      border-radius: 3.5px;
+      }
+
+      .rectangle {
+        position: absolute;
+        left: 0;
+        top: 128px;
+        width: 602px;
+        height: 220px;
+        border: 1px solid rgb(241, 241, 241);
+        display: flex;
+        flex-direction: column;
+      }
+
+     .rectangle:hover {
+      background-color: rgb(241, 241, 241);
+      }
+
+     .recct {
+      position: absolute;
+      top: 220px;
+      border: 1px solid rgb(241, 241, 241);
+      width: 602px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+     }
+
+     .peter {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 24px;
+      margin-left: 13px;
+      margin-top: 10px;
+     }
+
+     .toptweet {
+      display: flex;
+      flex-direction: row;
+      margin-left: 49px;
+      margin-top: 10px;
+      align-items: center;
+     }
+
+     .response {
+      height: 16px;
+      margin-right: 10px;
+     }
+
+     .Based {
+      font-size: 14px;
+      color: rgb(83, 100, 113);
+      font-weight: 500;
+     }
+
+    
+     .See {
+      color: rgb(29, 155, 240);
+     }
+
+     .peterobi {
+      display: flex;
+      flex-direction: row;
+      margin-top: 2px;
+      margin-left: 4px;
+     }
+
+     .obi {
+      font-weight: 700;
+      margin-right: 2px;
+      margin-left: 8px;
+      
+     }
+
+     .textpeter {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 8px;
+      cursor: pointer;
+     }
+
+     .mark {
+      height: 18px;
+      margin-top: 2px;
+      margin-right: 2px;
+     }
+
+     .obipic {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+     }
+
+     .vertline {
+      background-color: rgb(207, 217, 222);
+      width: 2px;
+      height: 78px;
+      margin-left: 10px;
+      margin-top: 4px;
+     }
+
+     .po {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-top: 4px;
+      margin-left: 8px;
+     }
+
+     .febr {
+      color: rgb(83, 100, 113);
+      margin-left: 1px;
+     }
+
+     .opton {
+      height: 20px;
+      margin-left: 263px;
+     }
+
+     .obitweet {
+      display: flex;
+      flex-direction: column;
+      margin-left: 2px;
+     }
+
+     .may {
+      font-size: 15.5px;
+      margin-left: 7px;
+     }
+
+     .retwet {
+      display: flex;
+      flex-direction: row;
+     }
+
+     .repy {
+      height: 16px;
+      margin-right: 10px;
+   }
+
+  
+     .numb {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 9px;
+      margin-top: 8px;
+     }
+
+     .count {
+      font-size: 14px;
+      color: rgb(83, 100, 113);
+      margin-right: 24px;
+     }
+
+     .reppy {
+      height: 16px;
+      margin-left: 19px;
+     }
+
+     .tread {
+      color: rgb(29, 155, 240);
+      margin-left: 6px;
+      margin-top: 28px;
+     }
+
+     span:hover {
+      text-decoration: underline;
+     }
+
+     .unicaf {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      margin-left: 19px;
+      margin-top: 18px;
+     }
+
+     .imgtwet {
+       display: flex;
+      flex-direction: row;
+    }
+
+     .texttet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+      margin-left: 14px;
+      cursor: pointer;
+     }
+
+     .mrks {
+      height: 18px;
+      margin-top: 18px;
+      margin-left: 2px;
+     }
+
+     .Scholarships {
+      font-weight: 700;
+      margin-bottom: -10px;
+     }
+
+     .applied {
+      font-size: 15.5px;
+      margin-left: 14px;
+      margin-top: -4px;
+      margin-bottom: 3px;
+     }
+
+     #unif {
+      width: 505px;
+      height: 260px;
+      margin-top: 12px;
+      margin-left: 12px;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+     }
+
+     .smallret {
+      border: 1px solid rgb(186, 191, 196);
+      width: 504px;
+      height: 70px;
+      margin-left: 12px;
+      margin-top: -5px;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+     }
+
+     .uniorg {
+      color: rgb(83, 100, 113);
+      margin-left: 16px;
+      margin-top: 14px;
+     }
+
+     .fullscho {
+      margin-left: 13px;
+     }
+
+     .forg {
+      color: rgb(83, 100, 113);
+      margin-top: 9px;
+     }
+
+     .iconics {
+       display: flex;
+       flex-direction: row;
+       margin-left: 19px;
+     }
+
+     .rpy {
+      height: 16px;
+      margin-top: 10px;
+     }
+
+     .py {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 48px;
+     }
+
+     .mber {
+      color: rgb(83, 100, 113);
+      margin-top: 5px;
+      font-size: 14px;
+      margin-left: 12px;
+     }
+
+     .ption {
+      height: 20px;
+      margin-top: 18px;
+      margin-left: 237px;
+     }
+
+     .Prom {
+      height: 12px;
+     }
+
+     .promot {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 8px;
+      margin-left: 20px;
+     }
+
+     #mote {
+      font-size: 13px;
+      margin-left: 4px;
+      color: rgb(83, 100, 113);
+     }
+
+     .jones {
+      height: 52px;
+     }
+
+
+     .whoto {
+      display: flex;
+      flex-direction: row;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+     }
+
+     .prof {
+      margin-left: 12px;
+     }
+
+     .jerry {
+      font-weight: 600;
+     }
+
+     .jery {
+      color: rgb(83, 100, 113);
+     }
+
+     .flw {
+      margin-left: 48px;
+      padding: 0px 16px;
+      border-radius: 20px;
+      color: #fff;
+      background-color: rgb(15, 20, 25);
+      border: none;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 32px;
+     }
+
+     .lw {
+      margin-left: 81px;
+     }
+
+     .snow {
+      display: flex;
+      align-items: center;
+     
+     }
+
+     .ollo {
+      margin-left: 68px;
+     }
+
+     .mot {
+      position: absolute;
+      top: 260px;
+      margin-left: 67px;
+      margin-top: 0px
+     }
+     
+
+     .how {
+      margin-top: 36px;
+     }
+  
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="leftsidebar">
+        <div class="twit">
+          <img class="logos" src="icons/Twitter-logo.svg.png" alt="" />
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/HOME.svg" alt="" />
+          <div class="dot"></div>
+          <div class="navside">Home</div>
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/Hashh.svg" />
+          <div class="navsid">Explore</div>
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/notification.svg">
+          <div class="ficat">Notifications</div>
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/message.svg">
+          <div class="messg">Messages</div>
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/Twitterblue.svg">
+          <div class="blue">Twitter Blue</div>
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/profile.svg">
+          <div class="file">Profile</div>
+        </div>
+        <div class="twit">
+          <img class="logo" src="icons/More-option.svg">
+          <div class="ore">More</div>
+        </div>
+        <div class="twit">
+          <button class="tweetbutton"><img class="plus" src="icons/TWEET.svg" alt=""></button>
+          <div class="weet">Tweet</div>
+        </div>
+        <div class="twit">
+          <img class="jo" src="icons/JOEJO.jpg">
+          <div class="counts">Accounts</div>
+        </div>
+      </div>
+      <main class="covering">
+        <div class="cove">
+          <div class="cover">
+            <div class="main">Home</div>
+            <div class="ff">
+              <div class="for">For you</div>
+              <div class="following">Following</div>
+            </div>
+            <div class="recta"></div>
+          </div>
+        </div>
+        <div class="rectan">
+          <div class="input-pic">
+            <img class="JOEJO" src="icons/JOEJO.jpg" />
+            <input class="input" type="text" placeholder="What's happening?" />
+          </div>
+          <div class="picss">
+            <div class="med">
+              <img class="pics" src="icons/media.svg" />
+              <div class="media">Media</div>
+            </div>
+            <div class="med">
+              <img class="pic" src="icons/gif.svg"/>
+              <div class="medi">GIF</div>
+            </div>
+             <div class="med">
+              <img class="pic" src="icons/poll.svg">
+              <div class="medi">Poll</div>
+             </div>
+             <div class="med">
+              <img class="pic" src="icons/emoji.svg">
+              <div class="medi">Emoji</div>
+             </div>
+             <div class="med">
+              <img class="pic" src="icons/schedule.svg">
+              <div class="medi">Schedule</div>
+             </div>
+             <img class="location" src="icons/location.svg" alt="">
+            <button class="tweet">Tweet</button>
+          </div>
+        </div>
+        <div class="rectang">Show 70 Tweets</div>
+        <div class="rectangl">
+          <img class="dev" src="icons/user.png">
+          <div class="tts">
+            <div class="twts">
+              <div class="texts">Dev.tobs <img class="in" src="icons/1200px-Flag_of_Nigeria.png"> <img class="in" src="icons/Flag_of_the_United_States.png"> |MDsc. EMCDs. DASCa. CSDA.</div>
+              <div class="Dev">@DevTobs &#183 Feb 20</div>
+              <div><img class="optn" src="icons/option.png" alt=""></div>
+              </div>
+              <div class="techies">We're gonna record lots of techies getting gigs/their first roles this week</div>
+              <div><img class="confetti" src="icons/confetti.png"></div>
+              <div class="wet">
+                <div class="reply">
+                  <img class="rep ply" src="icons/reply.svg">
+                  <div class="number ber">49</div>
+                </div>
+                <div class="reply">
+                 <img class="rep" src="icons/retweet.svg">
+                 <div class="number">51</div>
+                </div>
+                <div class="reply">
+                  <img class="rep" src="icons/like.svg">
+                  <div class="number">529</div>
+                 </div>
+                 <div class="reply">
+                  <img class="rep" src="icons/Frame.png">
+                  <div class="number">15.7K</div>
+                 </div>
+                 <div class="reply">
+                  <img class="rep" src="icons/share.svg">
+                 </div>
+               </div>
+              </div>
+              <div class="rectangle">
+                <div class="toptweet">
+                  <img class="response" src="icons/response.svg">
+                  <div class="Based">Based on your likes &#183; <span class="See">See more</span></div>
+                </div>
+                <div class="peterobi">
+                  <div class="obipic">
+                    <img class="peter" src="icons/peter obi.jpg">
+                    <div class="vertline"></div>
+                    <img class="po" src="icons/peter obi.jpg">
+                  </div>
+                  <div class="obitweet">
+                    <div class="textpeter">
+                      <div class="obi"><span>Peter Obi</span></div>
+                      <div><img class="mark" src="icons/mark.svg"></div>
+                      <div class="febr">@PeterObi &#183; Feb 23</div>
+                      <div><img class="opton" src="icons/option.png"></div>
+                    </div>
+                    <div class="may">On 27th May 2022, i took a most important decision in my life to join great</div>
+                    <div class="may">and patriotic Nigerians in Labour Party to rescue our dear country Nigeria</div>
+                    <div class="may">from litany of leadership and governance failures.</div>
+                    <div class="retwet">
+                      <div class="numb">
+                        <img class="repy" src="icons/reply.svg" alt="">
+                        <div class="count">2,568</div>
+                      </div>
+                     <div class="numb">
+                      <img class="repy" src="icons/(3) Home_Twitter_files/retweet.svg" alt="">
+                      <div class="count">19.6K</div>
+                     </div>
+                     <div class="numb">
+                      <img class="repy" src="icons/like.svg">
+                      <div class="count">59.6K</div>
+                     </div>
+                     <div class="numb">
+                      <img class="repy" src="icons/Frame.png">
+                      <div class="count">1.6M</div>
+                     </div>
+                     <div class="numb">
+                      <img class="reppy" src="icons/share.svg">
+                     </div>
+                    </div>
+                    <div class="tread">Show this thread </div>
+                  </div>
+                  </div>
+                  <div class="recct">
+                    <div class="imgtwet">
+                      <div>
+                        <img class="unicaf" src="icons/download.png">
+                      </div> 
+                      <div>
+                        <div class="texttet">
+                          <div class="Scholarships"><span>Unicaf Scholarships</span></div>
+                          <div><img class="mrks" src="icons/mark.svg"></div>
+                          <div class="forg">@UNICAForg</div>
+                          <div><img class="ption" src="icons/option.png" alt=""></div>
+                        </div>
+                        <div class="applied">Are you a Nigerian student? Apply for a full or partial scholarship today to</div>
+                        <div class="applied">earn an online UK Bachelor's or Master's degree</div>
+                        <div><img id="unif" src="icons/unicaf.png"></div>
+                        <div class="smallret">
+                          <div class="uniorg">unicaf.org</div>
+                          <div class="fullscho">10 Full and 50 Partial Unicaf Scholarships</div>
+                        </div>
+                        <div class="iconics">
+                          <div class="py">
+                            <div><img class="rpy" src="icons/reply.svg"></div>
+                            <div class="mber">331</div>
+                          </div>
+                          <div class="py">
+                            <div><img class="rpy" src="icons/retweet.svg"></div>
+                            <div class="mber">662</div>
+                          </div>
+                          <div class="py">
+                            <div><img class="rpy" src="icons/like.svg"></div>
+                            <div class="mber">6,365</div>
+                          </div>
+                          <div class="py">
+                            <div><img class="rpy" src="icons/Frame.png"></div>
+                            <div class="mber">14.4M</div>
+                          </div>
+                          <div class="py">
+                            <div><img class="rpy" src="icons/share.svg"></div>
+                          </div>
+                        </div>
+                        <div class="promot">
+                          <div><img class="Prom" src="icons/Promote.svg"></div>
+                          <div id="mote">Promoted</div>
+                        </div>
+                        </div>
+                     </div>
+                 </div>
+              </div>
+            </div>
+          </main>
+      <div class="rightsidebar">
+        <div class="under">
+          <div class="srh">
+            <img class="ss" src="icons/search-interface-symbol 1.png" alt="" />
+            <input
+              class="search-button"
+              type="text"
+              placeholder="Search Twitter"
+            />
+          </div>
+        </div>
+        <div class="rect">
+          <div class="trends">Trends for you</div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">#gistlover</div>
+            <div class="k">19.9K Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">#mylifestory</div>
+            <div class="k">1,604 Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">Gilmore</div>
+            <div class="k">5,610 Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">#Healthlife</div>
+            <div class="k">29.9K Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">Jesus Name</div>
+            <div class="k">26.4K Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Politics .Trending</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">#NationalShutdown</div>
+            <div class="k">5,238 Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">LP - 134,874</div>
+            <div class="k">20.5K Tweets</div>
+          </div>
+          <div class="tain">
+            <div class="tren">
+              <div class="trending">Trending in Nigeria</div>
+              <img class="option" src="icons/option.png" />
+            </div>
+            <div class="gist">PDP - 176,588</div>
+            <div class="k">13.8K Tweets</div>
+          </div>
+          <div class="show">Show more</div>
+        </div>
+      </div>
+      <div class="rectl">
+      <div class="trends">
+        Who to follow
+      </div>
+      <div class="whoto">
+       <img class="jones" src="icons/jones.png" alt="">
+       <div class="prof">
+        <div class="jerry">JeremiahJones</div>
+        <div class="jery">@jeremiahjones2</div>
+       </div>
+       <button class="flw">Follow</button>
+      </div>
+      <div class="whoto">
+       <img class="jones" src="icons/girl.png" alt="">
+       <div class="prof">
+        <div class="jerry">Mary Jane</div>
+        <div class="jery">@maryjane2</div>
+       </div>
+       <button class="flw lw">Follow</button>
+      </div>
+      <div class="whoto">
+       <img class="jones" src="icons/man.png" alt="">
+       <div class="prof">
+        <div class="jerry snow">Mark Snow
+        <img class="mark" src="icons/mark.svg">
+        </div>
+        <div class="jery">@marksnow1</div>
+       </div>
+       <button class="flw lw ollo">Follow</button>
+       </div>
+       <div class="promot mot">
+        <div><img class="Prom" src="icons/Promote.svg"></div>
+        <div id="mote">Promoted</div>
+      </div>
+      <div class="show how">Show more</div>
+      </div>
+    </div>
+  </body>
+</html>
