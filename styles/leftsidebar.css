@@ -1,0 +1,215 @@
+.leftsidebar {
+  position: fixed;
+  left: 106px;
+  top: 5px;
+}
+
+.twit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.logos{
+  height: 24px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.logos:hover {
+  background-color: rgb(227, 243, 255);
+}
+
+.logo {
+  height: 26px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.logo:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+.navside {
+  position: fixed;
+  top: 108px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.navsid {
+  position: fixed;
+  top: 159px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.twit:hover .navside,
+.twit:hover .navsid,
+.twit:hover .ficat,
+.twit:hover .messg,
+.twit:hover .file,
+.twit:hover .more-text,
+.twit:hover .weet,
+.twit:hover .counts,
+.twit:hover .blue {
+  opacity: 1;
+  transition: 0,14s;
+}
+
+.dot {
+  position: fixed;
+  left: 142px;
+  top: 65px;
+  background-color: rgb(29, 155, 240);
+  width: 7px;
+  height: 7px;
+  border-radius: 3.5px;
+  }
+
+
+.ficat {
+  position: fixed;
+  top: 209px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.messg {
+  position: fixed;
+  top: 262px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.blue {
+  position: fixed;
+  top: 312px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.file {
+  position: fixed;
+  top: 364px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.more-text {
+  position: fixed;
+  top: 414px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.weet {
+  position: fixed;
+  top: 474px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.counts {
+  position: fixed;
+  top: 498px;
+  font-size: 11px;
+  background-color: rgb(105, 105, 105);
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.Account-pic {
+  width: 62px;
+  height: 62px;
+  border-radius: 31px;
+  box-sizing: border-box;
+  margin-top: 48px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+.Account-pic:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+.tweetbutton {
+  background-color: rgb(29, 155, 240);
+  border: none;
+  padding: 14px 16px;
+  border-radius: 32px;
+  align-items: center;
+  margin-top: 2px;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.tweetbutton:hover {
+  background-color: rgb(30, 140, 220);
+}
+
+.plus {
+  margin-top: 2px;
+}
+
+

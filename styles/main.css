@@ -1,0 +1,769 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif, Arial, Helvetica, sans-serif;
+  height: 3000px;
+}      
+
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.covering {
+  position: relative;
+}
+
+.cove {
+  position: fixed;
+  top: 0;
+  left: 180px;
+  width: 602px;
+  height: 106px;
+  background-color: white;
+  z-index: 300;
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 180px;
+  width: 602px;
+  height: 106px;
+  border: 1px solid rgb(241, 241, 241);
+  z-index: 200;
+}
+
+.main {
+  position: fixed;
+  top: 12px;
+  left: 196px;
+  font-weight: 650;
+  font-size: 20px;
+}
+
+.ff {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 53px;
+}
+
+.for {
+  font-weight: bold;
+  padding: 17px 117px;
+  font-size: 15px;
+}
+
+.for:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+.following {
+  margin-left: 10px;
+  padding: 17px 117px;
+  color: rgb(83, 100, 113);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.following:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+.div-container {
+  position: fixed;
+  top: 103px;
+  left: 216px;
+  margin-left: 80px;
+  background-color: rgb(29, 155, 240);
+  width: 56px;
+  height: 4px;
+  border-radius: 35px;
+}
+
+.type-tweet {
+  position: absolute;
+  left: 171px;
+  top: 99px;
+  width: 602px;
+  height: 116px;
+  border: 1px solid rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+}
+
+.input-pic {
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  margin-left: 12px;
+  margin-top: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 510px;
+  height: 50px;
+  border: none;
+  outline: 0;
+}
+
+.input::placeholder {
+  font-size: 20px;
+  color: rgb(105, 121, 136);
+}
+
+.user-avatar {
+  margin-left: 18px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-top: 6px;
+}
+
+.picss {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+
+.med {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.pics {
+  height: 15px;
+  margin-left: 75px;
+  margin-top: 8px;
+  margin-right: 6px;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pics:hover {
+  background-color: rgb(227, 243, 255);
+}
+
+.media {
+  position: absolute;
+  bottom: -23px;
+  left: 74px;
+  font-size: 11px;
+  background-color: rgb(62, 62, 62);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 1;
+}
+
+.med:hover .media {
+  opacity: 1;
+}
+
+
+.pic {
+  height: 20px;
+  margin-top: 8px;
+  margin-right: 6px;
+  padding: 6px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.pic:hover {
+  background-color: rgb(227, 243, 255);
+}
+
+.medi {
+  position: absolute;
+  bottom: -23px;
+  font-size: 11px;
+  left: 1px;
+  background-color: rgb(62, 62, 62);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.med:hover .medi{
+  opacity: 1;
+}
+
+.location {
+  height: 19px;
+  margin-top: 8px;
+  opacity: 0.65;
+  margin-right: 4px;
+}
+
+.tweet {
+  background-color: rgb(29, 155, 240);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 224px;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 32px;
+  border: 0 solid black;
+  opacity: 0.5;
+}
+
+.showtweet {
+  position: absolute;
+  left: 171px;
+  top: 216px;
+  width: 602px;
+  height: 50px;
+  border: 1px solid rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: rgb(29, 155, 240);
+  cursor: pointer;
+}
+
+.showtweet:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.tweetmessage {
+  position: absolute;
+  left: 171px;
+  top: 266px;
+  width: 602px;
+  height: 128px;
+  border: 1px solid rgb(241, 241, 241);
+  display: flex;
+  flex-direction: row;
+}
+
+.tweetmessage:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+#avatar {
+  margin-top: 13px;
+}
+
+.tts {
+  display: flex;
+  flex-direction: column;
+}
+
+.twts {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: center;
+}
+
+.texts {
+  position: relative;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 12px;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.texts:hover {
+  text-decoration: underline;
+}
+
+.hover-div {
+  padding: 10rem 9rem;
+  position: absolute;
+  background-color: #fff;
+  opacity: 0;
+  top: 32px;
+  left: -24px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  border-radius: 8px;
+  transition: opacity 0.25s;
+  pointer-events: all;
+ 
+}
+
+.avatar {
+  margin-left: 1px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 25px;
+  position: absolute;
+  top: 16px;
+  left: 13px;
+}
+
+.texts:hover .hover-div{
+  opacity: 1;
+}
+
+.blue-mark {
+  height: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0px;
+  margin-left: 2px;
+  text-align: center;
+}
+
+.btn {
+  padding: 7px 18px;
+  border-radius: 32px;
+  border: 0.3px solid rgb(181, 188, 194);
+  background-color: #fff;
+  font-weight: 600;
+  color: #0f1419;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 16px;
+  right: 13px;
+}
+
+.button-hover {
+  padding: 7px 21px;
+  border-radius: 32px;
+  border: 0.3px solid rgb(240, 185, 185);
+  background-color: #fff;
+  font-weight: 700;
+  color: #0f1419;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 16px;
+  right: 13px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.button-hover:hover {
+  opacity: 1;
+  background-color: rgb(249, 227, 227);
+  color: rgb(236, 31, 31);
+}
+
+.mark-hover {
+   position: absolute;
+   right: 34px;
+   top: 74px;
+   height: 19px;
+}
+
+.second-text {
+  color: rgb(105, 121, 136);
+  font-weight: 400;
+  position: absolute;
+  top: 96px;
+  left: 13px;
+}
+
+.third-text {
+  white-space: nowrap;
+  position: absolute;
+  font-weight: 400;
+  left: 14px;
+  top: 134px;
+  color: rgb(42, 45, 48);
+}
+
+.text-hover {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  white-space: nowrap;
+  position: absolute;
+  left: 13px;
+  top: 72px;
+  font-size: 1.05rem;
+}
+
+.Dev {
+  color: rgb(83, 100, 113);
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.optn {
+  height: 20px;
+  margin-left: 129px;
+  margin-top: 12px;
+}
+
+.techies {
+  font-size: 15px;
+  margin-left: 12px;
+}
+
+.confetti {
+  height: 20px;
+  margin-left: 12px;
+  margin-top: 2px;
+}
+
+.wet {
+  display: flex;
+  flex-direction: row;
+  margin-left: 11px;
+  margin-top: 8px;
+}
+
+.reply {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 48px;
+}
+
+.rep {
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.number {
+  font-size: 14px;
+  margin-left: 12px;
+  color: rgb(83, 100, 113);
+}
+
+.div-tweet {
+  position: absolute;
+  left: 0;
+  top: 128px;
+  width: 602px;
+  height: 220px;
+  border: 1px solid rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+}
+
+.div-tweet:hover {
+background-color: rgb(245, 245, 245);
+}
+
+.toptweet {
+  display: flex;
+  flex-direction: row;
+  margin-left: 49px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.response {
+  height: 16px;
+  margin-right: 10px;
+}
+
+ .Based {
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+  font-weight: 500;
+}
+
+.top-text {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+  margin-left: 4px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertline {
+  background-color: rgb(207, 217, 222);
+  width: 2px;
+  height: 78px;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
+#avatar2 {
+  margin-left: 10px;
+}
+
+.tweet-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2px;
+}
+
+.avatar-small {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-top: 4px;
+  margin-left: 8px;
+}
+
+.txts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.txt {
+  font-weight: 700;
+  margin-right: 2px;
+  margin-left: 8px;
+}
+
+.mark {
+  height: 18px;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+.date {
+  color: rgb(83, 100, 113);
+  margin-left: 1px;
+}
+
+.opton {
+  height: 20px;
+  margin-left: 263px;
+}
+
+.may {
+  font-size: 15.5px;
+  margin-left: 7px;
+}
+
+.retwet {
+  display: flex;
+  flex-direction: row;
+}
+
+.numb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 9px;
+  margin-top: 8px;
+}
+
+.repy {
+  height: 16px;
+  margin-right: 10px;
+}
+
+.count {
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+  margin-right: 24px;
+}
+
+.reppy {
+  height: 16px;
+  margin-left: 19px;
+}
+
+.thread {
+  color: rgb(29, 155, 240);
+  margin-left: 6px;
+  margin-top: 28px;
+}
+
+span:hover {
+  text-decoration: underline;
+}
+
+.tweet-content {
+  position: absolute;
+  top: 220px;
+  border: 1px solid rgb(241, 241, 241);
+  width: 602px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-content:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.imgtwet {
+  display: flex;
+ flex-direction: row;
+}
+
+.avatar3 {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-left: 19px;
+  margin-top: 18px;
+}
+
+.texttet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.Scholarships {
+  font-weight: 700;
+  margin-bottom: -10px;
+}
+
+.mrks {
+  height: 18px;
+  margin-top: 18px;
+  margin-left: 2px;
+}
+
+.forg {
+  color: rgb(83, 100, 113);
+  margin-top: 9px;
+}
+
+.applied {
+  font-size: 15.5px;
+  margin-left: 14px;
+  margin-top: -4px;
+  margin-bottom: 3px;
+}
+
+#unif {
+  width: 505px;
+  height: 260px;
+  margin-top: 12px;
+  margin-left: 12px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+ .smallret {
+  border: 1px solid rgb(186, 191, 196);
+  width: 504px;
+  height: 70px;
+  margin-left: 12px;
+  margin-top: -5px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.ption {
+  height: 20px;
+  margin-top: 18px;
+  margin-left: 237px;
+}
+
+.uniorg {
+  color: rgb(83, 100, 113);
+  margin-left: 16px;
+  margin-top: 14px;
+}
+
+ .fullscho {
+  margin-left: 13px;
+}
+
+.iconics {
+  display: flex;
+  flex-direction: row;
+  margin-left: 19px;
+}
+
+.py {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 48px;
+}
+
+.rpy {
+  height: 16px;
+  margin-top: 10px;
+}
+
+.mber {
+  color: rgb(83, 100, 113);
+  margin-top: 5px;
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+.promot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.Prom {
+  height: 12px;
+ }
+
+#mote {
+  font-size: 13px;
+  margin-left: 4px;
+  color: rgb(83, 100, 113);
+}
+
+.in {
+  width: 14px;
+  height: 12px;
+  border-radius: 2px;
+  margin-left: 2px;
+}
+
+.See {
+color: rgb(29, 155, 240);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

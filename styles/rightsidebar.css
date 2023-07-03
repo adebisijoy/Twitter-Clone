@@ -1,0 +1,206 @@
+.rightsidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: fixed;
+  right: 74px;
+  top: 0;
+  z-index: 300;
+  width: 378px;
+  height: 55px;
+  background-color: white;
+}
+
+.search-area {
+  position: fixed;
+  right: 92px;
+  top: 7px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(237, 242, 243);
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 70px;
+  border-radius: 35px;
+  margin-bottom: 24px;
+  z-index: 2;
+}
+
+.search-icon {
+  height: 17px;
+  margin-right: 10px;
+}
+
+.search-button {
+  border: none;
+  background: none;
+  padding-right: 60px;
+  padding-left: 6px;
+  outline: 0;
+}
+
+.search-button::placeholder {
+  font-size: 15px;
+  color: rgb(95, 116, 136);
+}
+
+.trend-div {
+  position: absolute;
+  right: 83px;
+  top: 60px;
+  background-color: rgb(240, 244, 245);
+  height: 716px;
+  width: 326px;
+  padding-left: 16px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.trend-header {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 6px;
+  color: rgb(31, 31, 31);
+  margin-bottom: 18px;
+}
+
+.trend-content {
+  margin-left: 8px;
+  margin-bottom: 18px;
+}
+
+.trend-content:hover {
+  background-color: rgb(235, 238, 240);
+  transition: 0.15s;
+}
+
+.tren {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trending {
+  font-size: 14px;
+  color: rgb(78, 103, 123);
+}
+
+.option {
+  height: 18px;
+  margin-right: 20px;
+  border-radius: 2px;
+}
+
+.option:hover {
+  background-color: rgb(206, 234, 255);
+}
+
+.gist {
+  font-weight: 600;
+}
+
+.numbertweet {
+  color: rgb(78, 103, 123);
+  font-size: 14px;
+}
+
+.show {
+  color: rgb(29, 155, 240);
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.div-follow {
+  position: absolute;
+  right: 83px;
+  margin-top: 70px;
+  top: 730px;
+  background-color: rgb(240, 244, 245);
+  height: 348px;
+  width: 326px;
+  padding-left: 16px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.whoto {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.avatar4 {
+  height: 52px;
+}
+
+.prof {
+  margin-left: 12px;
+}
+
+.Names {
+  font-weight: 600;
+}
+
+.names {
+  color: rgb(83, 100, 113);
+}
+
+.follow-button {
+  margin-left: 48px;
+  padding: 0px 16px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: rgb(15, 20, 25);
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  min-height: 32px;
+}
+
+.snow {
+  display: flex;
+  align-items: center;
+ 
+}
+
+.lw {
+  margin-left: 81px;
+}
+
+.mot {
+  position: absolute;
+  top: 224px;
+  margin-left: 66px;
+  margin-top: 0px
+}
+
+.ollo {
+  margin-left: 68px;
+ }
+
+.how {
+  margin-top: 36px;
+ }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
